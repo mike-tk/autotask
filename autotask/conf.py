@@ -1,4 +1,4 @@
-
+import sys
 from django.conf import settings as django_settings
 
 
@@ -20,7 +20,7 @@ class Settings(object):
         self.AUTOTASK_HANDLE_TASK_IDLE_TIME = 10
         self.AUTOTASK_IS_ACTIVE = False
         self.AUTOTASK_WORKERS = 1
-        self.AUTOTASK_WORKER_EXECUTABLE = 'python'
+        self.AUTOTASK_WORKER_EXECUTABLE = sys.executable or 'python'
         self.AUTOTASK_WORKER_MONITOR_INTERVALL = 5
         self.AUTOTASK_RETRY_DELAY = 2
         self.DEBUG = True  # used for running pytest with threads
